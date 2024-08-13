@@ -10,7 +10,7 @@ public class Subject : IObservable<Payload>
     }
 
     public IDisposable Subscribe(IObserver<Payload> observer)
-    {         
+    {
         if (!Observers.Contains(observer))
         {
             Observers.Add(observer);

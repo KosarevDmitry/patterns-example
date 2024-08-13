@@ -1,21 +1,21 @@
 ﻿namespace Patterns.Behavioral.Command.Garage;
 
-    internal class GarageDoorCloseCommand : ICommand
+internal class GarageDoorCloseCommand : ICommand
+{
+    private readonly Garage _garage;
+
+    public GarageDoorCloseCommand(Garage g)
     {
-        private readonly Garage _garage;
-
-        public GarageDoorCloseCommand(Garage g)
-        {
-            _garage = g;
-        }
-
-        public void Execute()
-        {
-            _garage.Close();
-        }
-
-        public void Undo()
-        {
-            _garage.Open();
-        }
+        _garage = g;
     }
+
+    public void Execute()
+    {
+        _garage.Close();
+    }
+
+    public void Undo()
+    {
+        _garage.Open();
+    }
+}

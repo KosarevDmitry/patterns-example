@@ -1,15 +1,20 @@
 ﻿namespace Patterns.Structural.Decorator.Drink;
 
-internal class WhipCondiment : CondimentDecorator{
+internal class WhipCondiment : CondimentDecorator
+{
     private Beverage _beverage;
 
-    public WhipCondiment(Beverage beverage) {
+    public WhipCondiment(Beverage beverage)
+    {
         _beverage = beverage;
     }
 
-    public override string Description{
-        get{
-            if (_beverage.Description.StartsWith("Whip")){
+    public override string Description
+    {
+        get
+        {
+            if (_beverage.Description.StartsWith("Whip"))
+            {
                 return "Double " + _beverage.Description;
             }
             else
@@ -17,7 +22,8 @@ internal class WhipCondiment : CondimentDecorator{
         }
     }
 
-    public override double Cost() {
+    public override double Cost()
+    {
         return 0.15 + _beverage.Cost();
     }
 }

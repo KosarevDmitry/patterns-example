@@ -1,5 +1,6 @@
 namespace Patterns.Behavioral.Visitor.Employees;
 
-internal interface  IApprover{
+internal interface IApprover
+{
     void Recalculate(Employee employee);
-  }
+}

@@ -6,12 +6,12 @@ public class ExpressionPrinting
     {
         Console.WriteLine(literal.Value);
     }
-    
+
     public void PrintAddition(Addition addition)
     {
-        double leftValue = addition.Left.GetValue();
+        double leftValue  = addition.Left.GetValue();
         double rightValue = addition.Right.GetValue();
-        var sum = addition.GetValue();
+        var    sum        = addition.GetValue();
         Console.WriteLine("{0} + {1} = {2}", leftValue, rightValue, sum);
     }
 }

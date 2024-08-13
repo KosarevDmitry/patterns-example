@@ -1,11 +1,11 @@
 ﻿namespace Patterns.Structural.Facade.DvdPlayer;
 
-
-    public class Dvd
+public class Dvd
+{
+    public Dvd(string name)
     {
-        public Dvd(string name)
-        {
-            Movie = name;
-        }
-        public string Movie { get; set; }
+        Movie = name;
     }
+
+    public string Movie { get; set; }
+}

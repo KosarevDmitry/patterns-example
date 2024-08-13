@@ -1,8 +1,8 @@
-namespace  Patterns.Behavioral.Command.Calculator;
- public interface ICommand
+namespace Patterns.Behavioral.Command.Calculator;
 
-  {
-     void Execute();
-     void UnExecute();
-  }
- 
+public interface ICommand
+
+{
+    void Execute();
+    void UnExecute();
+}

@@ -1,21 +1,21 @@
-﻿
-namespace Patterns.Behavioral.Command.Garage;
-    public class Light
+﻿namespace Patterns.Behavioral.Command.Garage;
+
+public class Light
+{
+    private readonly string _name;
+
+    public Light(string name)
     {
-        private readonly string _name;
-
-        public Light(string name)
-        {
-            _name = name;
-        }
-
-        internal void On()
-        {
-            Console.WriteLine($"{_name} Light On");
-        }
-
-        internal void Off()
-        {
-            Console.WriteLine($"{_name} Light Off");
-        }
+        _name = name;
     }
+
+    internal void On()
+    {
+        Console.WriteLine($"{_name} Light On");
+    }
+
+    internal void Off()
+    {
+        Console.WriteLine($"{_name} Light Off");
+    }
+}

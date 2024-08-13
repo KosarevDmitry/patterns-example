@@ -4,8 +4,8 @@ internal class DemoIterator : IAbstractIterator
 
 {
     private DemoCollection _collection;
-    private int _current = 0;
-    private int _step = 1;
+    private int            _current = 0;
+    private int            _step    = 1;
 
 
     public DemoIterator(DemoCollection collection)
@@ -33,18 +33,21 @@ internal class DemoIterator : IAbstractIterator
 
     // Gets or sets stepsize
 
-    public int Step{
-        get{ return _step; }
-        set{ _step = value; }
+    public int Step
+    {
+        get { return _step; }
+        set { _step = value; }
     }
 
 
-    public Item CurrentItem{
-        get{ return _collection[_current] as Item; }
+    public Item CurrentItem
+    {
+        get { return _collection[_current] as Item; }
     }
 
 
-    public bool IsDone{
-        get{ return _current >= _collection.Count; }
+    public bool IsDone
+    {
+        get { return _current >= _collection.Count; }
     }
 }

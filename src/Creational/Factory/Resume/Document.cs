@@ -1,14 +1,16 @@
-namespace  Patterns.Creational.Factory.Resume;
+namespace Patterns.Creational.Factory.Resume;
 
-internal abstract class Document{
+internal abstract class Document
+{
     private List<Page> _pages = new();
     // easier to initialize via constructor
-    
-	public Document() {
-      CreatePages();
+
+    public Document()
+    {
+        CreatePages();
     }
-	
-    public List<Page> Pages=> _pages; 
-   
+
+    public List<Page> Pages => _pages;
+
     public abstract void CreatePages();
-  }
+}

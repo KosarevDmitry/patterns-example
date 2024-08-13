@@ -1,12 +1,11 @@
 ﻿namespace Patterns.Behavioral.ListOfSignatories;
 
-public enum Division{
+public enum Division
+{
     Chief,
     Finance,
     Marketing,
     Sales,
     Secretary,
     Security
-    
-    
 }

@@ -25,9 +25,10 @@ public class Multiton
     {
         // Lazy init (not thread safe as written)
         // Recommend using Double Check Locking if needing thread safety
-        if (!instances.TryGetValue(type, out var instance)){
+        if (!instances.TryGetValue(type, out var instance))
+        {
             instance = new Multiton(type);
-           instances.Add(type, instance);
+            instances.Add(type, instance);
         }
 
         return instance;
@@ -37,8 +38,4 @@ public class Multiton
     {
         return _type.ToString();
     }
-
-    
-    
-    
 }

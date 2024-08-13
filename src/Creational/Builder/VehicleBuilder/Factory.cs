@@ -1,7 +1,9 @@
 namespace Patterns.Creational.Builder.Car;
 
-internal class Factory{
-    public Vehicle Construct(VehicleBuilder vehicleBuilder) {
+internal class Factory
+{
+    public Vehicle Construct(VehicleBuilder vehicleBuilder)
+    {
         vehicleBuilder.BuildFrame();
         vehicleBuilder.BuildEngine();
         vehicleBuilder.BuildWheels();

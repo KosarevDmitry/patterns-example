@@ -1,7 +1,10 @@
-﻿namespace Patterns.Behavioral.ChainOfResponsibility.Calculator {
-    public abstract class BaseHandler : IHandler {
-        public void AddChain(IHandler handler) {
-            Next = handler;    
+﻿namespace Patterns.Behavioral.ChainOfResponsibility.Calculator
+{
+    public abstract class BaseHandler : IHandler
+    {
+        public void AddChain(IHandler handler)
+        {
+            Next = handler;
         }
 
         public abstract double? Handle(double[] values, Action action);

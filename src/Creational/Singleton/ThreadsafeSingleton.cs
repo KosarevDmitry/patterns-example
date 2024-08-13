@@ -1,14 +1,14 @@
 namespace Patterns.Creational.Singleton;
 
-
 public sealed class Singleton
 {
+    private static          Singleton instance = null;
+    private static readonly object    padlock  = new object();
 
-    private static Singleton instance = null;
-    private static readonly object padlock = new object();
     Singleton()
     {
     }
+
     public static Singleton Instance
     {
         get
@@ -20,6 +20,7 @@ public sealed class Singleton
                 {
                     instance = new Singleton();
                 }
+
                 return instance;
             }
         }

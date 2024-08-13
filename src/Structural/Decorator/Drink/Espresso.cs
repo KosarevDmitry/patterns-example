@@ -1,17 +1,16 @@
 ﻿namespace Patterns.Structural.Decorator.Drink;
 
 internal class Espresso : Beverage
+{
+    public Espresso()
     {
-        public Espresso()
-        {
-            _description = "Espresso";
-        }
-
-        public override string Description => _description;
-
-        public override double Cost()
-        {
-            return 1.99;
-        }
+        _description = "Espresso";
     }
 
+    public override string Description => _description;
+
+    public override double Cost()
+    {
+        return 1.99;
+    }
+}

@@ -1,9 +1,11 @@
 namespace Patterns.Structural.Facade.Bank;
 
-internal class Customer{
+internal class Customer
+{
     private string _name;
 
-    public Customer(string name) {
+    public Customer(string name)
+    {
         _name = name;
     }
 

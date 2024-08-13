@@ -1,15 +1,14 @@
 ﻿namespace Patterns.Structural.AdapterPattern;
 
 internal class MallardDuck : IDuck
+{
+    public void Quack()
     {
-        public void Quack()
-        {
-            Console.WriteLine("Quack Quack Quack");
-        }
-
-        public void Fly()
-        {
-            Console.WriteLine("Flies 500 Metres");
-        }
+        Console.WriteLine("Quack Quack Quack");
     }
 
+    public void Fly()
+    {
+        Console.WriteLine("Flies 500 Metres");
+    }
+}
