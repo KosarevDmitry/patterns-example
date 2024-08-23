@@ -5,10 +5,7 @@ internal abstract class Document
     private List<Page> _pages = new();
     // easier to initialize via constructor
 
-    public Document()
-    {
-        CreatePages();
-    }
+    public Document()=> CreatePages();
 
     public List<Page> Pages => _pages;
 
