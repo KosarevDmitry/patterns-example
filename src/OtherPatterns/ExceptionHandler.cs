@@ -9,16 +9,24 @@ class BarrierPostPhaseException : Exception
 
 public class Catch
 {
+
+    [Fact]
+    void TransformExceptionType()
+    {
+        Assert.Throws<BarrierPostPhaseException>(() => Failed());
+    }
+
     /// <summary>
     ///  Throw in finally block
     /// </summary>
     /// <exception cref="BarrierPostPhaseException"></exception>
-    [Fact]
-    void Do()
+    void Failed()
     {
         Exception _exception = null;
         try
         {
+            int[] ar = { 1,2 }; 
+            var r        = ar[2]; // error
             _exception = null; // reset the exception if it was set previously
         }
         catch (Exception ex)
@@ -34,7 +42,7 @@ public class Catch
 
 
     [Fact]
-    void ExceptionHAndling()
+    void CheckInnerException()
     {
         Task task = Task.Run(() => { throw null; });
         try
