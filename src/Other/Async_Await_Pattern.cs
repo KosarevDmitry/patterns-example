@@ -1,5 +1,7 @@
 using System.Diagnostics;
 
+namespace Patterns.Other;
+
 /// <summary>
 /// the test automatically call GetAwaiter,  then  call IsCompleted.  If IsCompleted  returns true
 /// then  GetResult  otherwise OnCompleted. 
@@ -7,7 +9,7 @@ using System.Diagnostics;
 public class Async_Await_Pattern
 {
     [Fact]
-    static async void If_complete_true()
+    async void Test()
     {
         int actual = await new A(true);
         Assert.Equal(1, actual);
