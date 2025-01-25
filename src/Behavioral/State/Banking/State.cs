@@ -3,11 +3,11 @@ namespace Patterns.Behavioral.State.Banking;
 internal abstract class State
 {
     protected Account account;
-    protected double  balance;
+    protected decimal  balance;
 
-    protected double interest;
-    protected double lowerLimit;
-    protected double upperLimit;
+    protected decimal interest;
+    protected decimal lowerLimit;
+    protected decimal upperLimit;
 
     // Properties
 
@@ -17,13 +17,13 @@ internal abstract class State
         set { account = value; }
     }
 
-    public double Balance
+    public decimal Balance
     {
         get { return balance; }
         set { balance = value; }
     }
 
-    public abstract void Deposit(double  amount);
-    public abstract void Withdraw(double amount);
+    public abstract void Deposit(decimal  amount);
+    public abstract void Withdraw(decimal amount);
     public abstract void PayInterest();
 }

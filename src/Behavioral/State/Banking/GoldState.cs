@@ -6,7 +6,7 @@ internal class GoldState : State
     {
     }
 
-    public GoldState(double balance, Account account)
+    public GoldState(decimal balance, Account account)
     {
         this.balance = balance;
         this.account = account;
@@ -15,18 +15,18 @@ internal class GoldState : State
 
     private void Initialize()
     {
-        interest   = 0.05;
-        lowerLimit = 1000.0;
-        upperLimit = 10000000.0;
+        interest   = 0.05m;
+        lowerLimit = 1000.0m;
+        upperLimit = 10000000.0m;
     }
 
-    public override void Deposit(double amount)
+    public override void Deposit(decimal amount)
     {
         balance += amount;
         StateChangeCheck();
     }
 
-    public override void Withdraw(double amount)
+    public override void Withdraw(decimal amount)
     {
         balance -= amount;
         StateChangeCheck();
@@ -40,7 +40,7 @@ internal class GoldState : State
 
     private void StateChangeCheck()
     {
-        if (balance < 0.0)
+        if (balance < 0.0m)
         {
             account.State = new RedState(this);
         }

@@ -6,7 +6,7 @@ internal class SilverState : State
     {
     }
 
-    public SilverState(double balance, Account account)
+    public SilverState(decimal balance, Account account)
     {
         this.balance = balance;
         this.account = account;
@@ -15,18 +15,18 @@ internal class SilverState : State
 
     private void Initialize()
     {
-        interest   = 0.0;
-        lowerLimit = 0.0;
-        upperLimit = 1000.0;
+        interest   = 0.0m;
+        lowerLimit = 100.0m;
+        upperLimit = 1000.0m;
     }
 
-    public override void Deposit(double amount)
+    public override void Deposit(decimal amount)
     {
         balance += amount;
         StateChangeCheck();
     }
 
-    public override void Withdraw(double amount)
+    public override void Withdraw(decimal amount)
     {
         balance -= amount;
         StateChangeCheck();

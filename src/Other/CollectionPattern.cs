@@ -18,19 +18,13 @@ public class FeatureCollection : IFeatureCollection
     private                 IDictionary<Type, object>? _features;
 
 
-    /// <summary>
-    /// Initializes a new instance of <see cref="FeatureCollection"/>.
-    /// </summary>
+
     public FeatureCollection()
     {
     }
 
 
-    /// <summary>
-    /// Initializes a new instance of <see cref="FeatureCollection"/> with the specified initial capacity.
-    /// </summary>
-    /// <param name="initialCapacity">The initial number of elements that the collection can contain.</param>
-    /// <exception cref="System.ArgumentOutOfRangeException"><paramref name="initialCapacity"/> is less than 0</exception>
+   
     public FeatureCollection(int initialCapacity)
     {
         if (initialCapacity < 0)
@@ -41,23 +35,20 @@ public class FeatureCollection : IFeatureCollection
         _initialCapacity = initialCapacity;
     }
 
-    /// <summary>
-    /// Initializes a new instance of <see cref="FeatureCollection"/> with the specified defaults.
-    /// </summary>
-    /// <param name="defaults">The feature defaults.</param>
+   
     public FeatureCollection(IFeatureCollection defaults)
     {
         _defaults = defaults;
     }
 
 
-    /// <inheritdoc />
+   
     public bool IsReadOnly
     {
         get { return false; }
     }
 
-    /// <inheritdoc />
+    
     public object? this[Type key]
     {
         get
@@ -99,7 +90,7 @@ public class FeatureCollection : IFeatureCollection
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
-    /// <inheritdoc />
+  
     public IEnumerator<KeyValuePair<Type, object>> GetEnumerator()
     {
         if (_features != null)
@@ -112,7 +103,7 @@ public class FeatureCollection : IFeatureCollection
 
         if (_defaults != null)
         {
-            // Don't return features masked by the wrapper.
+            
             foreach (var pair in _features == null ? _defaults : _defaults.Except(_features, FeatureKeyComparer))
             {
                 yield return pair;
@@ -120,13 +111,13 @@ public class FeatureCollection : IFeatureCollection
         }
     }
 
-    /// <inheritdoc />
+   
     public TFeature? Get<TFeature>()
     {
         return (TFeature?)this[typeof(TFeature)];
     }
 
-    /// <inheritdoc />
+   
     public void Set<TFeature>(TFeature? instance)
     {
         this[typeof(TFeature)] = instance;

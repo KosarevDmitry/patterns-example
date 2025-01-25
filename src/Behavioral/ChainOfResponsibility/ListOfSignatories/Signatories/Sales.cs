@@ -18,14 +18,15 @@ public class Sales : BaseHandler
     }
 
     private bool Calculation(object o, out string comment)
-    {
-        if (DateTime.Now.Hour < 12)
+    {     
+        if (o is Document { Idea: "bad" })
         {
-            comment = Success;
-            return true;
+        
+            comment = Failer;
+            return false;
         }
 
-        comment = Failer;
-        return false;
+        comment = Success;
+        return true;
     }
 }

@@ -1,13 +1,8 @@
 namespace Patterns.Behavioral.Observer.Observer1;
 
-public class Subject : IObservable<Payload>
+public class Publisher : IObservable<Payload>
 {
-    public IList<IObserver<Payload>> Observers { get; set; }
-
-    public Subject()
-    {
-        Observers = new List<IObserver<Payload>>();
-    }
+    public  List<IObserver<Payload>> Observers { get; } = [];
 
     public IDisposable Subscribe(IObserver<Payload> observer)
     {
@@ -23,7 +18,15 @@ public class Subject : IObservable<Payload>
     {
         foreach (var observer in Observers)
         {
-            observer.OnNext(new Payload { Message = message });
+            try
+            {
+                observer.OnNext(new Payload(message: message, publisher:nameof(Publisher)) );
+                observer.OnCompleted();
+            }
+            catch (Exception e)
+            {
+                observer.OnError(e);
+            }  
         }
     }
 }

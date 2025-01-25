@@ -12,8 +12,7 @@ public class Initializer
 
     internal static Initializer Create(string logDirectory)
     {
-        // Only create a listener if the log directory exists.
-
+        
         Initializer eventListener = null;
         try
         {

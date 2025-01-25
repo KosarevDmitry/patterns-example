@@ -15,12 +15,12 @@ public class Finance : BaseHandler
                throw new InvalidOperationException("It's impossible to delegate the task further.");
     }
 
-    private int threshold = 500;
+    private int threshold = 200;
 
     private bool Calculation(object o, out string comment)
     {
-        var income = new Random().Next(100, 1000);
-        if (income > threshold)
+        
+        if (o is Document doc &&  doc.Income > threshold)
         {
             comment = Success;
             return true;

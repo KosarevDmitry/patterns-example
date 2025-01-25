@@ -8,10 +8,10 @@ internal class Account
     public Account(string owner)
     {
         _owner = owner;
-        _state = new SilverState(0.0, this);
+        _state = new SilverState(0.0m, this);
     }
 
-    public double Balance => _state.Balance;
+    public decimal Balance => _state.Balance;
 
     public State State
     {
@@ -19,7 +19,7 @@ internal class Account
         set { _state = value; }
     }
 
-    public void Deposit(double amount)
+    public void Deposit(decimal amount)
     {
         _state.Deposit(amount);
         Console.WriteLine("Deposited {0:C} --- ", amount);
@@ -27,7 +27,7 @@ internal class Account
         Console.WriteLine(" Status = {0}",        this.State.GetType().Name);
     }
 
-    public void Withdraw(double amount)
+    public void Withdraw(decimal amount)
     {
         _state.Withdraw(amount);
         Console.WriteLine("Withdrew {0:C} --- ", amount);

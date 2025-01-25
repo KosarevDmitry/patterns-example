@@ -23,6 +23,7 @@ But still, the pattern is a little far-fetched. Any programming usually consists
 1. **State** +  pattern that allows an object to alter its behavior when its internal state changes. 
 The state pattern can be interpreted as a strategy pattern, which is able to switch a strategy.The state pattern is used in computer programming to encapsulate varying behavior for the same object, based on its internal state. This can be a cleaner way for an object to change its behavior at runtime without resorting to conditional statements and thus improve maintainability.
 1. **Observer** + Good patterп.
+   
  
 #### Structural
 1. **Adapter** Is it possible to convert one type to another without using adapter?

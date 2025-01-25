@@ -2,7 +2,7 @@ namespace Patterns.Behavioral.Observer.Observer1;
 
 public class Observer : IObserver<Payload>
 {
-    public string Message { get; set; }
+    public  List<Payload> Messages { get;}= [];
 
     public void OnCompleted()
     {
@@ -12,14 +12,14 @@ public class Observer : IObserver<Payload>
     {
     }
 
-    public void OnNext(Payload value)
+    public void OnNext(Payload payload)
     {
-        Message = value.Message;
+        Messages.Add(payload);
     }
 
     //tricks is the subscription  will stop automatically when the current instance of Observer is disposed
-    public IDisposable Register(Subject subject)
+    public IDisposable Register(Publisher publisher)
     {
-        return subject.Subscribe(this);
+        return publisher.Subscribe(this);
     }
 }

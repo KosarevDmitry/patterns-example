@@ -35,4 +35,7 @@
         <Compile Remove="StructuralTests.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+        <Using Include="Xunit" />
+    </ItemGroup>
 </Project>

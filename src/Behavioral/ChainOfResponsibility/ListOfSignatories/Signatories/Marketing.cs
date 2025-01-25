@@ -17,12 +17,8 @@ public class Marketing : BaseHandler
 
     private bool Calculation(object o, out string comment)
     {
-        if (DateTime.Now.DayOfWeek == DayOfWeek.Monday)
-        {
-            comment = Failer;
-            return false;
-        }
-
+     
+     
         comment = Success;
         return true;
     }

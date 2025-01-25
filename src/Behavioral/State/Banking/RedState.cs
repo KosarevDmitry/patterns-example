@@ -3,7 +3,7 @@ namespace Patterns.Behavioral.State.Banking;
 internal class RedState : State
 
 {
-    private double _serviceFee;
+    private decimal _serviceFee;
 
     public RedState(State state)
     {
@@ -14,22 +14,22 @@ internal class RedState : State
 
     private void Initialize()
     {
-        interest    = 0.0;
-        lowerLimit  = -100.0;
-        upperLimit  = 0.0;
-        _serviceFee = 15.00;
+        interest    = 0.0m;
+        lowerLimit  = -100.0m;
+        upperLimit  = 0.0m;
+        _serviceFee = 5.00m;
     }
 
-    public override void Deposit(double amount)
+    public override void Deposit(decimal amount)
     {
         balance += amount;
         StateChangeCheck();
     }
 
-    public override void Withdraw(double amount)
+    public override void Withdraw(decimal amount)
     {
-        amount = amount - _serviceFee;
-        Console.WriteLine("No funds available for withdrawal!");
+        balance -= amount + _serviceFee;
+        
     }
 
     public override void PayInterest()
