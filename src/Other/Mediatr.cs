@@ -15,11 +15,20 @@ builder.Services.AddMediatR(cfg =>
 
 builder.Services.AddScoped<IStudentsService, StudentsService>();
 
-public record Student(string Name)
+public record Student(string name, string  title)
 {
   [Key]
   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
   public int Id { get; set; }
+  public string Name { get; set; } = name;
+  public string Title { get; set; } = title;
+}
+
+
+public record StudentDTO()
+{
+  
+
   public string Name { get; set; } = Name;
 }
 
@@ -39,8 +48,9 @@ public interface IStudentsService
 
 public class StudentsService(IMediator mediator) : IStudentsService
 {
-  public async Task<Student> Create(Student student)
+  public async Task<Student> Create(StudentDTO student)
   {
+	 //   
     CreateStudentCommand command = new(student.Name)
     {
       Name = student.Name
@@ -57,7 +67,9 @@ public class CreateStudentCommandHandler(IStudentsRepository studentsRepository)
 {
   public async Task<Student> Handle(CreateStudentCommand request, CancellationToken cancellationToken)
   {
-    var newStudent = new Student(request.Name);
+	  
+	 string title = request.Name.StartWith(A)? "Mr" : "Mrs";
+    var newStudent = new Student(request.Name, title);
     return await studentsRepository.AddAsync(newStudent, cancellationToken).ConfigureAwait(false);
   }
 }
