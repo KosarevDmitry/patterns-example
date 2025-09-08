@@ -30,7 +30,7 @@ The state pattern can be interpreted as a strategy pattern, which is able to swi
 1. **Composite**
 1. **Decorator**
 1. **Facade** is  about how an usual service workflow probably looks like: checking counterparties, processing requests, parsing, logging, recording in database.
-1.  **FlyWeight**
+1. **FlyWeight**
 1. **Proxy**  It's probably used. In principle it is logical.
  
 #### Creational
@@ -44,7 +44,7 @@ The state pattern can be interpreted as a strategy pattern, which is able to swi
 1. **MultiTon**  is several singleton, it complicates testing too.
 1. **ResourceAcquisition**
 
-> By and large any programmer who uses interfaces and abstract classes codes with patterns in any way. There is no another choice.
+By and large any programmer who uses interfaces and abstract classes codes with patterns in any way. There is no another choice.
  
 ### As a joke, I present excerpts from 2 books.
 
