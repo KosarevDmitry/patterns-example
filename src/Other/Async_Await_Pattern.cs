@@ -2,10 +2,10 @@ using System.Diagnostics;
 
 namespace Patterns.Other;
 
-/// <summary>
-/// the test automatically call GetAwaiter,  then  call IsCompleted.  If IsCompleted  returns true
-/// then  GetResult  otherwise OnCompleted. 
-/// </summary>
+/*
+ The test automatically call GetAwaiter,  then  call IsCompleted.  If IsCompleted  returns true
+ then GetResult is called otherwise OnCompleted. 
+*/
 public class Async_Await_Pattern
 {
     [Fact]
