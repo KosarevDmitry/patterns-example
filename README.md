@@ -2,7 +2,7 @@
 Mostly I took examples from <https://www.dofactory.com/> and "<https://en.wikipedia.org>  
 Sometimes I edited them for greater clarity from my point of view. 
 
-I add interesting designs to `OtherPatterns` dir.  
+I add the interesting pattern to the `OtherPatterns` dir.  
 
 #### Behavioral
 1. Strategy**  is just implements the meaning of an abstract class or interface and nothing more.
@@ -21,7 +21,7 @@ But still, the pattern is a little far-fetched. Any programming usually consists
 1.  **Memento**  saves  a state of the class. The trick is that the class that serves to save the Memento state is encapsulated, is private. 
 1. **State**  allows an object to alter its behavior when its internal state changes. 
 The state pattern can be interpreted as a strategy pattern, which is able to switch a strategy. The state pattern is used in computer programming to encapsulate varying behavior for the same object, based on its internal state. This can be a cleaner way for an object to change its behavior at runtime without resorting to conditional statements and thus improve maintainability.
-1. **Observer**  is good patterп.
+1. **Observer**  is a good patterп.
    
  
 #### Structural
@@ -34,14 +34,14 @@ The state pattern can be interpreted as a strategy pattern, which is able to swi
 1. **Proxy**  It's probably used. In principle it is logical.
  
 #### Creational
-1. **Abstract**  often used
+1. **Abstract**  is often used
 1. **Builder**  actions are defined by the interface. 
-1. **Factory** is   similar template. 
-1. **LazyInitialization**  is lazy class.
+1. **Factory** is  a similar template. 
+1. **LazyInitialization**  is a lazy class.
 1. **ObjectPool**
 1. **Prototype**  creates a class by cloning.
-1. **Singleton**  is used often. Its disadvanges that it complicates testing process.   
-1. **MultiTon**  is several singleton, it complicates testing too.
+1. **Singleton**  is oftet used. Its disadvanges is that it complicates testing process.   
+1. **MultiTon**  is the several singleton, it complicates testing too.
 1. **ResourceAcquisition**
 
 By and large any programmer who uses interfaces and abstract classes codes with patterns in any way. There is no another choice.
